@@ -39,7 +39,7 @@ class EmailAutomation:
 
             [sg.Text("Email Attachment", size=(20, 1), font=("Helvetica", 13))],
 
-            [sg.Input(key='attachment', font=("Helvetica", 13), size=(68, 1)),
+            [sg.Input(key='attachment', readonly=True, font=("Helvetica", 13), size=(68, 1)),
              sg.FileBrowse(font=("Helvetica", 13))],
 
             [sg.Text('')],
