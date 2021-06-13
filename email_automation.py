@@ -6,8 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 import PySimpleGUI as sg
-from email.message import EmailMessage
-from O365 import Message
+
 
 
 class EmailAutomation:
@@ -35,49 +34,49 @@ class EmailAutomation:
                     "Please enter the email ccs, candidates' emails, names, and positions separated by a comma.\nExample: test@gmail.com, next@gmail.com.\n"
                     "\nFor the email message, indicate where you want to include the individual's name and positions using"
                     " {name} and {position}.\nExample: Dear {name}, thank you for applying to the {position}",
-                    size=(100, 5), font=("Helvetica", 14), pad=(10,10))]], font=("Helvetica",18))],
+                    size=(84, 6), font=("Helvetica", 14), pad=(10,10))]], font=("Helvetica",18))],
             [sg.Text('')],
 
-            [sg.Text("Email Attachment", size=(20, 1), font=("Helvetica", 18))],
+            [sg.Text("Email Attachment", size=(20, 1), font=("Helvetica", 15))],
 
-            [sg.Input(key='attachment', font=("Helvetica", 18), size=(68, 1)),
+            [sg.Input(key='attachment', font=("Helvetica", 15), size=(68, 1)),
              sg.FileBrowse(font=("Helvetica", 15))],
 
             [sg.Text('')],
 
-            [sg.Text("Email Subject (required)", size=(35, 1), font=("Helvetica", 18), justification="left"),
+            [sg.Text("Email Subject (required)", size=(36, 1), font=("Helvetica", 15), justification="left"),
              sg.Text(''),
              sg.Text(''),
-             sg.Text("Email CC", size=(35, 1), font=("Helvetica", 18), justification="left")],
+             sg.Text("Email CC", size=(35, 1), font=("Helvetica", 15), justification="left")],
 
-            [sg.Input(key='subject', font=("Helvetica", 18), size=(35, 1), justification="left"),
+            [sg.Input(key='subject', font=("Helvetica", 15), size=(36, 1), justification="left"),
              sg.Text(''),
              sg.Text(''),
-             sg.Input(key='cc', font=("Helvetica", 18), size=(35, 1), justification="left")],
-
-            [sg.Text('')],
-
-            [sg.Text("Email Message (required)", size=(35, 1), font=("Helvetica", 18)),
-             sg.Text(''),
-             sg.Text(''),
-             sg.Text("Candidates' Emails (required)", size=(35, 1), font=("Helvetica", 18), justification="left")],
-
-            [sg.Multiline(size=(34, 3), font=("Helvetica", 18), key="message", justification="left"),
-             sg.Text(''),
-             sg.Text(''),
-             sg.Multiline(size=(34, 3), font=("Helvetica", 18), key="emails", justification="right")],
+             sg.Input(key='cc', font=("Helvetica", 15), size=(35, 1), justification="left")],
 
             [sg.Text('')],
 
-            [sg.Text("Candidates' Names", size=(35, 1), font=("Helvetica", 18)),
+            [sg.Text("Email Message (required)", size=(36, 1), font=("Helvetica", 15)),
              sg.Text(''),
              sg.Text(''),
-             sg.Text("Candidates' Positions", size=(35, 1), font=("Helvetica", 18))],
+             sg.Text("Candidates' Emails (required)", size=(36, 1), font=("Helvetica", 15), justification="left")],
 
-            [sg.Multiline(size=(34, 3), font=("Helvetica", 18), key="names"),
+            [sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="message", justification="left"),
              sg.Text(''),
              sg.Text(''),
-             sg.Multiline(size=(34, 3), font=("Helvetica", 18), key="positions")],
+             sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="emails", justification="right")],
+
+            [sg.Text('')],
+
+            [sg.Text("Candidates' Names", size=(36, 1), font=("Helvetica", 15)),
+             sg.Text(''),
+             sg.Text(''),
+             sg.Text("Candidates' Positions", size=(36, 1), font=("Helvetica", 15))],
+
+            [sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="names"),
+             sg.Text(''),
+             sg.Text(''),
+             sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="positions")],
 
             [sg.Text('')],
         ]
@@ -95,14 +94,13 @@ class EmailAutomation:
                          layout,
                          margins=(100,20),
                          finalize=True,
-                         grab_anywhere=True,
                          )
 
     def openLoginLayout(self) -> sg.Window:
         loginInput = [
-            [sg.Text("Email", size=(10, 1), font=("Helvetica", 18)),
+            [sg.Text("Email", size=(10, 1), font=("Helvetica", 15)),
              sg.Input(key='email', font=("Helvetica", 18), size=(30, 1))],
-            [sg.Text("Password", size=(10, 1), font=("Helvetica", 18)),
+            [sg.Text("Password", size=(10, 1), font=("Helvetica", 15)),
              sg.Input(key='password', font=("Helvetica", 18), size=(30, 1), password_char="*")],
         ]
 
@@ -120,7 +118,6 @@ class EmailAutomation:
                          layout,
                          margins=(50, 50),
                          finalize=True,
-                         grab_anywhere=True,
                          )
 
     def openErrorLayout(self, errorMessage: str) -> sg.Window:
@@ -143,7 +140,6 @@ class EmailAutomation:
                          margins=(50, 50),
                          finalize=True,
                          text_justification="center",
-                         grab_anywhere=True,
                          )
 
     def openSuccessLayout(self) -> sg.Window:
@@ -166,7 +162,6 @@ class EmailAutomation:
                          margins=(50, 50),
                          finalize=True,
                          text_justification="center",
-                         grab_anywhere=True,
                          )
 
     def sendEmails(self, names: str, emails: str, positions: str, subject: str, cc: str, message: str, attachment: str) -> None:
