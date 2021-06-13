@@ -6,8 +6,8 @@ Often times executives on campus clubs opt to send a non-personalized email when
 
 ## Installation
 
-If you're a Windows user, please click on this [link](windows_executable/email_automation) to install the program. It will be in the form of a .exe file which you can save on your desktop for permanent use.
+If you're a Windows user, please click on this [link](windows_executable/email_automation) then click "Download" on the top right to install the program. It will be in the form of a .exe file which you can save on your desktop for permanent use.
 
-If you're a Mac user, please click on this [link](mac_executable/email_automation.dmg) to install the program. It will be in the form of a .dmg file which you can use to install the .app file.
+If you're a Mac user, please click on this [link](mac_executable/email_automation.dmg) then click "Download" on the top right to install the program. It will be in the form of a .dmg file which you can use to install the .app file.
 
 ## How It Works 
