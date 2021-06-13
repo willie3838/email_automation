@@ -34,55 +34,55 @@ class EmailAutomation:
                     "Please enter the email ccs, candidates' emails, names, and positions separated by a comma.\nExample: test@gmail.com, next@gmail.com.\n"
                     "\nFor the email message, indicate where you want to include the individual's name and positions using"
                     " {name} and {position}.\nExample: Dear {name}, thank you for applying to the {position}",
-                    size=(84, 6), font=("Helvetica", 14), pad=(10,10))]], font=("Helvetica",18))],
+                    size=(73, 6), font=("Helvetica", 13), pad=(10,10))]], font=("Helvetica",13))],
             [sg.Text('')],
 
-            [sg.Text("Email Attachment", size=(20, 1), font=("Helvetica", 15))],
+            [sg.Text("Email Attachment", size=(20, 1), font=("Helvetica", 13))],
 
-            [sg.Input(key='attachment', font=("Helvetica", 15), size=(68, 1)),
-             sg.FileBrowse(font=("Helvetica", 15))],
-
-            [sg.Text('')],
-
-            [sg.Text("Email Subject (required)", size=(36, 1), font=("Helvetica", 15), justification="left"),
-             sg.Text(''),
-             sg.Text(''),
-             sg.Text("Email CC", size=(35, 1), font=("Helvetica", 15), justification="left")],
-
-            [sg.Input(key='subject', font=("Helvetica", 15), size=(36, 1), justification="left"),
-             sg.Text(''),
-             sg.Text(''),
-             sg.Input(key='cc', font=("Helvetica", 15), size=(35, 1), justification="left")],
+            [sg.Input(key='attachment', font=("Helvetica", 13), size=(68, 1)),
+             sg.FileBrowse(font=("Helvetica", 13))],
 
             [sg.Text('')],
 
-            [sg.Text("Email Message (required)", size=(36, 1), font=("Helvetica", 15)),
+            [sg.Text("Email Subject (required)", size=(36, 1), font=("Helvetica", 13), justification="left"),
              sg.Text(''),
              sg.Text(''),
-             sg.Text("Candidates' Emails (required)", size=(36, 1), font=("Helvetica", 15), justification="left")],
+             sg.Text("Email CC", size=(35, 1), font=("Helvetica", 13), justification="left")],
 
-            [sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="message", justification="left"),
+            [sg.Input(key='subject', font=("Helvetica", 13), size=(36, 1), justification="left"),
              sg.Text(''),
              sg.Text(''),
-             sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="emails", justification="right")],
+             sg.Input(key='cc', font=("Helvetica", 13), size=(35, 1), justification="left")],
 
             [sg.Text('')],
 
-            [sg.Text("Candidates' Names", size=(36, 1), font=("Helvetica", 15)),
+            [sg.Text("Email Message (required)", size=(36, 1), font=("Helvetica", 13)),
              sg.Text(''),
              sg.Text(''),
-             sg.Text("Candidates' Positions", size=(36, 1), font=("Helvetica", 15))],
+             sg.Text("Candidates' Emails (required)", size=(36, 1), font=("Helvetica", 13), justification="left")],
 
-            [sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="names"),
+            [sg.Multiline(size=(34, 3), font=("Helvetica", 13), key="message", justification="left"),
              sg.Text(''),
              sg.Text(''),
-             sg.Multiline(size=(34, 3), font=("Helvetica", 15), key="positions")],
+             sg.Multiline(size=(34, 3), font=("Helvetica", 13), key="emails", justification="right")],
+
+            [sg.Text('')],
+
+            [sg.Text("Candidates' Names", size=(36, 1), font=("Helvetica", 13)),
+             sg.Text(''),
+             sg.Text(''),
+             sg.Text("Candidates' Positions", size=(36, 1), font=("Helvetica", 13))],
+
+            [sg.Multiline(size=(34, 3), font=("Helvetica", 13), key="names"),
+             sg.Text(''),
+             sg.Text(''),
+             sg.Multiline(size=(34, 3), font=("Helvetica", 13), key="positions")],
 
             [sg.Text('')],
         ]
 
         buttons = [
-             [sg.Button('Send emails', key="send", font=("Helvetica", 15))],
+             [sg.Button('Send emails', key="send", font=("Helvetica", 13))],
         ]
 
         layout = [
