@@ -6,7 +6,7 @@ Often times executives on campus clubs opt to send a non-personalized email when
 
 ## Installation
 ![Windows Installation](/photos/windows_install.png)
-If you're a Windows user, please click on this [link](windows_executable/email_automation) then click "Download" on the top right to install the program. It will be in the form of a .exe file which you can save on your desktop for permanent use.
+If you're a Windows user, please click on this [link](windows_executable/email_automation.exe) then click "Download" on the top right to install the program. It will be in the form of a .exe file which you can save on your desktop for permanent use.
 
 <br />
 
