@@ -167,10 +167,10 @@ class EmailAutomation:
 
     def sendEmails(self, names: str, emails: str, positions: str, subject: str, cc: str, message: str, attachment: str) -> None:
 
-        names = names.replace("\n", "").replace(" ", "")
-        positions = positions.replace("\n", "").replace(" ", "")
-        emails = emails.replace("\n", "").replace(" ", "")
-        cc = cc.replace("\n", "").replace(" ", "")
+        names = names.replace("\n", "")
+        positions = positions.replace("\n", "")
+        emails = emails.replace("\n", "")
+        cc = cc.replace("\n", "")
 
         if emails == "" or message == "" or subject == "":
             raise Exception("You have empty fields, please fill them in")
@@ -183,7 +183,7 @@ class EmailAutomation:
             with smtplib.SMTP_SSL("smtp.gmail.com", self.port, context=self.context) as server:
                 server.login(self.username, self.password)
 
-                if attachment != "\n":
+                if attachment != "":
                     filename = os.path.basename(attachment)
                     file = open(attachment, "rb")
                     part = MIMEBase('application', 'octet-stream')
@@ -206,7 +206,7 @@ class EmailAutomation:
                     msg['CC'] = cc
                     msg.attach(MIMEText(message.format(name=names[i], position=positions[i]), 'plain'))
 
-                    if attachment != "\n":
+                    if attachment != "":
                         msg.attach(part)
 
                     server.send_message(msg)
