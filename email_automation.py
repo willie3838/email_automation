@@ -93,8 +93,9 @@ class EmailAutomation:
 
         return sg.Window("Email Information",
                          layout,
-                         margins=(100,100),
+                         margins=(100,20),
                          finalize=True,
+                         grab_anywhere=True,
                          )
 
     def openLoginLayout(self) -> sg.Window:
@@ -119,6 +120,7 @@ class EmailAutomation:
                          layout,
                          margins=(50, 50),
                          finalize=True,
+                         grab_anywhere=True,
                          )
 
     def openErrorLayout(self, errorMessage: str) -> sg.Window:
@@ -141,6 +143,7 @@ class EmailAutomation:
                          margins=(50, 50),
                          finalize=True,
                          text_justification="center",
+                         grab_anywhere=True,
                          )
 
     def openSuccessLayout(self) -> sg.Window:
@@ -163,6 +166,7 @@ class EmailAutomation:
                          margins=(50, 50),
                          finalize=True,
                          text_justification="center",
+                         grab_anywhere=True,
                          )
 
     def sendEmails(self, names: str, emails: str, positions: str, subject: str, cc: str, message: str, attachment: str) -> None:
